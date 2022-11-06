@@ -4,6 +4,7 @@ Description
 -----------
 LazyTeX is a Discord bot that converts pictures you send to LaTeX!
 GitHub: https://github.com/Andrew923/Hack112
+Youtube Demo: https://www.youtube.com/watch?v=Ztyppv7Iowg&ab_channel=StevenGuo
 
 Get Started
 -----------
@@ -12,7 +13,7 @@ https://tinyurl.com/lazytex
 
 To use, simply send a picture with the caption "latex", "LaTex", or anything with "tex" in it.
 
-Dependencies
+How It Works
 ------------
 Though user's don't have to install anything, the bot has a few depedencies. Firstly, it
 uses an API wrapper for Discord found here: https://github.com/Rapptz/discord.py and is 
