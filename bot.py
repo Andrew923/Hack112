@@ -1,4 +1,5 @@
 import discord
+from pylatexenc.latex2text import LatexNodes2Text
 import requests
 import platform
 import os
@@ -34,15 +35,19 @@ async def on_message(message):
     if 'hello' in message.content.lower():
         await message.channel.send('Hello!')
 
-    elif message.attachments != []:
+    elif 'tex' in message.content.lower() and message.attachments != []:
         #post request to api to get latex
         file = await message.attachments[0].read()
         result = requests.post('http://54.242.209.107/predict/',
-                               files = {'file': file})
+                               files={'file': file})
 
         #make embedded message with result
         embed = discord.Embed(title='Result!', color=0x7CB9E8)
-        embed.add_field(name='LaTeX', value='`' + result.json() + '`')
+        embed.add_field(name='LaTeX:', value='`' + result.json() + '`', inline=False)
+
+        #text representation of latex
+        text = '`' + LatexNodes2Text().latex_to_text(result.json()) + '`'
+        embed.add_field(name='Text:', value=text)
 
         #rendered latex image
         url = latexRenderURL(result.json())
