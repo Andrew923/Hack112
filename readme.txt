@@ -3,6 +3,7 @@ TITLE
 Description
 -----------
 Discord bot that converts pictures you send to LaTeX!
+GitHub: https://github.com/Andrew923/Hack112
 
 Dependencies
 ------------
@@ -14,6 +15,10 @@ The requests library is used to make API calls to the LaTeX-OCR API, which was b
 from a docker image (https://hub.docker.com/r/lukasblecher/pix2tex) and deployed on
 an AWS EC2 instance. The API can also directly be accessed by sending a POST request
 to http://54.242.209.107/ (an example of this being done in Postman is in example.jpg). 
+
+The pylatexenc library (https://pylatexenc.readthedocs.io/en/latest/latex2text/)
+converts the resulting LaTeX to text form in case you want to paste your result
+somewhere that does not accept LaTeX (like maybe Google or something).
 
 The CodeCogs Equation Rendering webservice (https://latex.codecogs.com/) is used to render
 the output LaTeX to confirm the validity of the output LaTeX.
